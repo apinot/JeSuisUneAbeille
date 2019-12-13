@@ -1,0 +1,38 @@
+{% extends "template.html.twig" %}
+
+{% block content %}
+<h1>Liste des plantes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Nom latin</th>
+            <th scope="col">Taille</th>
+            <th scope="col">Floraison</th>
+            <th scope="col">Couleur</th>
+            <th scope="col">Emplacement</th>
+            <th scope="col">Nectar</th>
+            <th scope="col">Pollen</th>
+            <th scope="col">Miellat</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for plante in plantes %}
+        <tr>
+            <th scope="row">{{plante.id}}</th>
+            <td>{{plante.nom}}</td>
+            <td>{{plante.nom_latin}}</td>
+            <td>{{plante.taille}} m</td>
+            <td>{{plante.floraison}}</td>
+            <td>{{plante.couleur}}</td>
+            <td>{{plante.emplacement}}</td>
+            <td>{{plante.nectar}}</td>
+            <td>{{plante.pollen}}</td>
+            <td>{% if plante.miellat %} M {% endif %}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
