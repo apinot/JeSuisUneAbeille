@@ -17,7 +17,10 @@ $app = new \Slim\App($container);
 
 /** Routes */
 //Add your routes here
-$app->get('/', ControllerPlantes::class.':afficherListePlantes');
+$app->get('/', ControllerPlantes::class.':afficherListePlantes')->setName('listerPlantes');
+
+$app->get('/plante/{id}', ControllerPlantes::class.':afficherEditForm')->setName('afficherEditForm');
+$app->delete('/plante/{id}', ControllerPlantes::class.':supprimerPlante')->setName('supprimerPlante');
 
 //run application
 $app->run();
