@@ -34,7 +34,7 @@
             <td>{% if plante.miellat %} M {% endif %}</td>
             <td>
                 <div class="row">
-                    <a class="btn btn-primary col-5" role="button" href="{{ path_for('afficherEditForm', { 'id': plante.id }) }}"><i class="fas fa-edit"></i></a>                
+                    <a class="btn btn-primary col-5" role="button" href="{{ path_for('formEditPlante', { 'id': plante.id }) }}"><i class="fas fa-edit"></i></a>                
                     <form class="col-5" method="POST" action="{{ path_for('supprimerPlante', { 'id': plante.id }) }}">
                         <input type="hidden" name="_METHOD" value="DELETE"/>
                         <button type="submit" class="btn btn-danger" value="Supprimer"><i class="fas fa-trash-alt"></i></button>

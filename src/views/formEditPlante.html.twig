@@ -1,42 +1,43 @@
 {% extends "template.html.twig" %}
 
 {% block content %}
-<form>
+<form action="{{ path_for('modifierPlante', { 'id': plante.id }) }}" method="POST">
+    <input type="hidden" name="_METHOD" value="PUT"/>
     <div class="form-group">
         <label for="nom">Nom :</label>
-        <input type="text" class="form-control" id="nom" value="{{plante.nom}}">
+        <input type="text" class="form-control" name="nom" id="nom" value="{{plante.nom}}">
     </div>
     <div class="form-group">
         <label for="nom_latin">Nom latin :</label>
-        <input type="text" class="form-control" id="nom_latin" value="{{plante.nom_latin}}">
+        <input type="text" class="form-control" name="nom_latin" id="nom_latin" value="{{plante.nom_latin}}">
     </div>
     <div class="form-group">
         <label for="taille">Taille :</label>
-        <input type="text" class="form-control" id="taille" value="{{plante.taille}}">
+        <input type="text" class="form-control" name="taille" id="taille" value="{{plante.taille}}">
     </div>
     <div class="form-group">
         <label for="floraison">Période de Floraison :</label>
-        <input type="text" class="form-control" id="floraison" value="{{plante.floraison}}">
+        <input type="text" class="form-control" name="floraison" id="floraison" value="{{plante.floraison}}">
     </div>
     <div class="form-group">
         <label for="couleur">Couleur de Floraison :</label>
-        <input type="text" class="form-control" id="couleur" value="{{plante.couleur}}">
+        <input type="text" class="form-control" name="couleur" id="couleur" value="{{plante.couleur}}">
     </div>
     <div class="form-group">
         <label for="emplacement">Emplacement dans le jardin botanique :</label>
-        <input type="text" class="form-control" id="emplacement" value="{{plante.emplacement}}">
+        <input type="text" class="form-control" name="emplacement" id="emplacement" value="{{plante.emplacement}}">
     </div>
     <div class="form-group">
         <label for="nectar">Point de Nectar :</label>
-        <input type="number" class="form-control" id="nectar" value="{{plante.nectar}}">
+        <input type="number" class="form-control" name="nectar" id="nectar" value="{{plante.nectar}}">
     </div>
     <div class="form-group">
         <label for="pollen">Point de Pollen :</label>
-        <input type="number" class="form-control" id="pollen" value="{{plante.pollen}}">
+        <input type="number" class="form-control" name="pollen" id="pollen" value="{{plante.pollen}}">
     </div>
     <div class="form-group">
         <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="miellat" checked="{{plante.miellat}}">
+            <input type="checkbox" class="custom-control-input" name="miellat" id="miellat" {% if plante.miellat %}checked{% endif %}>
             <label class="custom-control-label" for="miellat">Miellat</label>
         </div>
     </div>
