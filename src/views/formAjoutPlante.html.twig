@@ -1,0 +1,48 @@
+{% extends "template.html.twig" %}
+
+{% block content %}
+
+<h1 class="text-center">Creer une plante</h1>
+<form action="{{ path_for('ajouterPlante') }}" method="POST">
+    <div class="form-group">
+        <label for="nom">Nom :</label>
+        <input type="text" class="form-control" name="nom" id="nom">
+    </div>
+    <div class="form-group">
+        <label for="nom_latin">Nom latin :</label>
+        <input type="text" class="form-control" name="nom_latin" id="nom_latin">
+    </div>
+    <div class="form-group">
+        <label for="taille">Taille :</label>
+        <input type="text" class="form-control" name="taille" id="taille">
+    </div>
+    <div class="form-group">
+        <label for="floraison">Période de Floraison :</label>
+        <input type="text" class="form-control" name="floraison" id="floraison">
+    </div>
+    <div class="form-group">
+        <label for="couleur">Couleur de Floraison :</label>
+        <input type="text" class="form-control" name="couleur" id="couleur">
+    </div>
+    <div class="form-group">
+        <label for="emplacement">Emplacement dans le jardin botanique :</label>
+        <input type="text" class="form-control" name="emplacement" id="emplacement">
+    </div>
+    <div class="form-group">
+        <label for="nectar">Point de Nectar :</label>
+        <input type="number" class="form-control" name="nectar" id="nectar">
+    </div>
+    <div class="form-group">
+        <label for="pollen">Point de Pollen :</label>
+        <input type="number" class="form-control" name="pollen" id="pollen">
+    </div>
+    <div class="form-group">
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="miellat" id="miellat">
+            <label class="custom-control-label" for="miellat">Miellat</label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+</form>
+
+{% endblock %}
