@@ -6,7 +6,7 @@ networks:
 
 services: 
     backoffice:
-        build: .
+        build: ./back-office
         volumes: 
             - ./back-office:/var/www/html
             - ./000-default.conf:/etc/apache2/sites-available/000-default.conf

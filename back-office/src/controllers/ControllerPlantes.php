@@ -3,12 +3,20 @@ namespace abeille\controllers;
 
 use \abeille\models\Plante;
 use \abeille\utils\Router;
+use \abeille\utils\QRCode;
 
 class ControllerPlantes extends Controller {
 
     public function afficherListePlantes($request , $response, $args) {
         $plantes = Plante::all();
         return $this->render($response, 'listePlantes.html.twig', compact("plantes"));
+    }
+
+    public function afficherPlante($request, $response, $args){
+        $plante = Plante::find($args['id']);
+        $json = ["type" => "plante", "id" => $plante->id];
+        $qrcode = QRCode::generate($json);
+        return $this->render($response, 'plante.html.twig', compact("plante", "qrcode"));
     }
 
     public function supprimerPlante($request, $response, $args) {

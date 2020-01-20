@@ -22,7 +22,8 @@ $app->get('/', ControllerPlantes::class.':afficherListePlantes')->setName('liste
 $app->get('/plante/add', ControllerPlantes::class.':afficherAjoutForm')->setName('formAjoutPlante');
 $app->post('/plante/add', ControllerPlantes::class.':ajouterPlante')->setName('ajouterPlante');
 
-$app->get('/plante/{id}', ControllerPlantes::class.':afficherEditForm')->setName('formEditPlante');
+$app->get('/plante/{id}', ControllerPlantes::class.':afficherPlante')->setName('afficherPlante');
+$app->get('/plante/{id}/edit', ControllerPlantes::class.':afficherEditForm')->setName('formEditPlante');
 $app->put('/plante/{id}', ControllerPlantes::class.':modifierPlante')->setName('modifierPlante');
 
 $app->delete('/plante/{id}', ControllerPlantes::class.':supprimerPlante')->setName('supprimerPlante');
