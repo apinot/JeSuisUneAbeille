@@ -21,6 +21,7 @@ services:
     database:
         image: mysql
         command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8 --collation-server=utf8_general_ci
+        restart: always
         environment:
             - MYSQL_ROOT_PASSWORD=root
             - MYSQL_USER=abeille
@@ -31,12 +32,10 @@ services:
         networks:
             - jeu-abeille.fr
         volumes:
-            - ./db-volume:/var/sql
+            - ./db-volume:/var/lib/mysql
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         container_name: phpmyadmin
-        volumes:
-            - /sessions
         ports:
             - 5000:80
         environment:
