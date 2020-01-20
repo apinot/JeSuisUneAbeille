@@ -4,11 +4,12 @@
 <div class="d-flex justify-content-between align-items-center pt-4 pb-5">
     <h1>Liste des plantes</h1>
     <div>
-        <a class="btn btn-primary" role="button" href="{{ path_for('formAjoutPlante', { 'id': plante.id }) }}"><i class="fas fa-plus"></i> Ajouter</a>                
+        <a class="btn btn-primary" role="button" href="{{ path_for('formAjoutPlante', { 'id': plante.id }) }}"><i
+                class="fas fa-plus"></i> Ajouter</a>
     </div>
 </div>
 
-<table class="table">
+<table class="table table-sm table-striped">
     <thead>
         <tr>
             <th scope="col">#ID</th>
@@ -38,13 +39,15 @@
             <td>{{plante.pollen}}</td>
             <td>{% if plante.miellat %} M {% endif %}</td>
             <td>
-                <div class="row">
-                    <a class="btn btn-primary col-5" role="button" href="{{ path_for('formEditPlante', { 'id': plante.id }) }}"><i class="fas fa-edit"></i></a>                
-                    <form class="col-5" method="POST" action="{{ path_for('supprimerPlante', { 'id': plante.id }) }}">
-                        <input type="hidden" name="_METHOD" value="DELETE"/>
-                        <button type="submit" class="btn btn-danger" value="Supprimer"><i class="fas fa-trash-alt"></i></button>
-                    </form>
-                </div>
+                <a class="btn btn-primary col-12 mb-1" href="{{path_for('afficherPlante', {id: plante.id})}}" role="button"><i
+                        class="fas fa-qrcode"></i></a>
+                <a class="btn btn-primary col-12 mb-1" role="button"
+                    href="{{ path_for('formEditPlante', { 'id': plante.id }) }}"><i class="fas fa-edit"></i></a>
+                <form method="POST" action="{{ path_for('supprimerPlante', { 'id': plante.id }) }}">
+                    <input type="hidden" name="_METHOD" value="DELETE" />
+                    <button type="submit" class="btn btn-danger col-12" value="Supprimer"><i
+                            class="fas fa-trash-alt"></i></button>
+                </form>
             </td>
         </tr>
         {% endfor %}
