@@ -2,3 +2,4 @@ vendor/
 composer.lock
 db-volume
 .idea
+node_modules/
