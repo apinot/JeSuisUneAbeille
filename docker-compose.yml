@@ -33,6 +33,7 @@ services:
             - jeu-abeille.fr
         volumes:
             - ./db-volume:/var/lib/mysql
+            - ./back-office/resources/abeille.sql:/docker-entrypoint-initdb.d/abeille.sql
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         container_name: phpmyadmin
