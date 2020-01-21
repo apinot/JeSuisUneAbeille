@@ -1,0 +1,26 @@
+{
+  "name": "front-office",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon App.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apinot/JeSuisUneAbeille.git"
+  },
+  "author": "Nekika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apinot/JeSuisUneAbeille/issues"
+  },
+  "homepage": "https://github.com/apinot/JeSuisUneAbeille#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "nodemon": "^2.0.2",
+    "pug": "^2.0.4"
+  }
+}
