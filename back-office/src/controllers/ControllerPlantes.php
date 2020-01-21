@@ -9,7 +9,7 @@ class ControllerPlantes extends Controller {
 
     public function afficherListePlantes($request , $response, $args) {
         $plantes = Plante::all();
-        return $this->render($response, 'listePlantes.html.twig', compact("plantes"));
+        return $this->render($response, 'index.html.twig', compact("plantes"));
     }
 
     public function afficherPlante($request, $response, $args){

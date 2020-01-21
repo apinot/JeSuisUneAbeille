@@ -2,6 +2,7 @@
 require_once('../../vendor/autoload.php');
 
 use \abeille\controllers\ControllerPlantes;
+use \abeille\controllers\ControllerRuche;
 
 //database connection with Eloquent
 $capsule = new \Illuminate\Database\Capsule\Manager;
@@ -27,6 +28,9 @@ $app->get('/plante/{id}/edit', ControllerPlantes::class.':afficherEditForm')->se
 $app->put('/plante/{id}', ControllerPlantes::class.':modifierPlante')->setName('modifierPlante');
 
 $app->delete('/plante/{id}', ControllerPlantes::class.':supprimerPlante')->setName('supprimerPlante');
+
+$app->get('/ruche', ControllerRuche::class.':afficherRuche')->setName('afficherRuche');
+
 
 //run application
 $app->run();
