@@ -22,7 +22,7 @@ append scripts
             }
 
             const id = JSON.parse(result).id
-            window.location.replace('/plantes/' + id);
+            window.location.replace('/plante/' + id);
         }
 
         const qrScanner = new QrScanner(camera, result => {redirect(result)});

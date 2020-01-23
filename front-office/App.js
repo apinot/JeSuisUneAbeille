@@ -38,7 +38,7 @@ app.get('/plantes', (req, res) => {
        })
 });
 
-app.get('/plantes/:id', (req, res) => {
+app.get('/plante/:id', (req, res) => {
     Plante.find(req.params.id)
         .then(plante => {
             res.render('plante', {plante: plante})
@@ -49,7 +49,7 @@ app.get('/plantes/:id', (req, res) => {
 });
 
 app.get('/ruche', (req, res) => {
-    return res.json('ruche');
+    return res.render('ruche');
 });
 
 app.get('/scan', (req,res) => {
