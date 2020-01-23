@@ -14,8 +14,15 @@ append scripts
         const camera = document.getElementById('camera');
         
         const redirect = (result) => {
+            const data = JSON.parse(result);
+
+            if(data.type === 'ruche') {
+                window.location.replace('/ruche');
+                return;
+            }
+
             const id = JSON.parse(result).id
-            window.location.replace('http://localhost:3000/plantes/' + id);
+            window.location.replace('/plantes/' + id);
         }
 
         const qrScanner = new QrScanner(camera, result => {redirect(result)});

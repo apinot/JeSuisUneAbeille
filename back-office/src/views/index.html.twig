@@ -1,8 +1,25 @@
 {% extends "template.html.twig" %}
 
 {% block content %}
-<div class="d-flex justify-content-between align-items-center pt-4 pb-5">
-    <h1>Liste des plantes</h1>
+<h1 class="mb-3">Je suis une abeille
+    <small class="text-muted">Back-Office</small>
+</h1>
+
+<div class="d-flex justify-content-start align-items-center">
+    <h3 class="mr-3">
+        Ruche
+    </h3>
+    <div>
+        <a class="btn btn-primary col-12 mb-1" href="{{path_for('afficherRuche')}}" role="button"><i class="fas fa-qrcode"></i></a>
+    </div>
+</div>
+
+<hr>
+
+<div class="d-flex justify-content-between align-items-center pb-5">
+    <h3>
+        Liste des plantes
+    </h3>
     <div>
         <a class="btn btn-primary" role="button" href="{{ path_for('formAjoutPlante', { 'id': plante.id }) }}"><i
                 class="fas fa-plus"></i> Ajouter</a>
@@ -39,8 +56,7 @@
             <td>{{plante.pollen}}</td>
             <td>{% if plante.miellat %} M {% endif %}</td>
             <td>
-                <a class="btn btn-primary col-12 mb-1" href="{{path_for('afficherPlante', {id: plante.id})}}" role="button"><i
-                        class="fas fa-qrcode"></i></a>
+                <a class="btn btn-primary col-12 mb-1" href="{{path_for('afficherPlante', {id: plante.id})}}" role="button"><i class="fas fa-qrcode"></i></a>
                 <a class="btn btn-primary col-12 mb-1" role="button"
                     href="{{ path_for('formEditPlante', { 'id': plante.id }) }}"><i class="fas fa-edit"></i></a>
                 <form method="POST" action="{{ path_for('supprimerPlante', { 'id': plante.id }) }}">

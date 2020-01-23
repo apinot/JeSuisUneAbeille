@@ -48,6 +48,10 @@ app.get('/plantes/:id', (req, res) => {
         })
 });
 
+app.get('/ruche', (req, res) => {
+    return res.json('ruche');
+});
+
 app.get('/scan', (req,res) => {
     res.render('scan')
 });
