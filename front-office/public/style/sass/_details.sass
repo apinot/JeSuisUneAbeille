@@ -1,0 +1,28 @@
+$li-margin-top: 5px
+
+$button-font-size: 12pt
+$button-border-radius: 4px
+$button-padding: 7px
+$button-background-color: lightgrey
+
+ul#details
+  padding: 0
+  margin: auto auto 20px auto
+  li
+    list-style: none
+    &:nth-child(n + 2)
+      margin-top: $li-margin-top
+    span.value
+      text-transform: capitalize
+      &:before
+        content: ' '
+button
+  font-size: $button-font-size
+  border: solid 1px grey
+  border-radius: $button-border-radius
+  background-color: transparent
+  width: fit-content
+  margin: auto
+  padding: $button-padding
+  &:active
+    background-color: $button-background-color

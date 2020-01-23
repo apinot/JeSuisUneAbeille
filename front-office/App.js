@@ -30,8 +30,7 @@ app.get('/', (req, res) => {
 app.get('/plantes', (req, res) => {
    Plante.all()
        .then(plantes => {
-           console.log(plantes);
-           res.json(plantes)
+           res.render('plantes', {plantes: plantes})
        })
        .catch(error => {
            console.log(error);
@@ -42,8 +41,7 @@ app.get('/plantes', (req, res) => {
 app.get('/plantes/:id', (req, res) => {
     Plante.find(req.params.id)
         .then(plante => {
-            console.log(plante);
-            res.send(plante)
+            res.render('plante', {plante: plante})
         })
         .catch(error => {
             res.render('error', error)

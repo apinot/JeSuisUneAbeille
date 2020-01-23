@@ -4,7 +4,8 @@ block title
     title Scan
 
 block content
-    video(id='camera')
+    h3 Scanner un QR Code
+    video(id='camera', muted=true)
 append scripts
     script(type='module').
         import QrScanner from './js/tools/qr-scanner.min.js';

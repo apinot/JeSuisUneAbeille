@@ -3,4 +3,20 @@ extends base
 block title
     title Accueil
 block content
-    a(href="/scan") Scanner un code QR
+        div(id='blocks-menu')
+            a(href='/plantes' class='block' id='plantes')
+                div(class='icon')
+                    i(class="fas fa-seedling")
+                span(class='caption') Liste des plantes
+            a(href='/scan' class='block' id='scan')
+                div(class='icon')
+                    i(class="fas fa-qrcode")
+                span(class='caption') Scan
+            a(href='/classement' class='block' id='classement')
+                div(class='icon')
+                    i(class="far fa-star")
+                span(class='caption') Classement
+            a(href='/connexion' class='block' id='connexion')
+                div(class='icon')
+                    i(class="fas fa-user-circle")
+                span(class='caption') Connexion
