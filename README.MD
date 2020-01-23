@@ -6,6 +6,10 @@
  - Aller dans le dossier *back-office*
  - Lancer la commande `composer install` 
 
+### Front Office
+ - Aller dans le dossier *front-office*
+ - Lancer la commande `npm install` 
+
 ### Lancer Docker
  - Lancer la commande `docker-compose up` à la racine du dépot
 
@@ -14,6 +18,9 @@
 
 ### Back-office
 Pour accéder au back-office se connecter à l'adresse http://localhost:8080
+
+### Front-office
+Pour accéder au front-office se connecter à l'adresse http://localhost:3000
 
 ### PhpMyAdmin
 Pour accéder à la base de donnée via php my admin, se connecter à l'adresse http://localhost:5000
