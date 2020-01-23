@@ -39,6 +39,17 @@ app.get('/plantes', (req, res) => {
        })
 });
 
+app.get('/plantes/:id', (req, res) => {
+    Plante.find(req.params.id)
+        .then(plante => {
+            console.log(plante);
+            res.send(plante)
+        })
+        .catch(error => {
+            res.render('error', error)
+        })
+});
+
 app.get('/scan', (req,res) => {
     res.render('scan')
 });
