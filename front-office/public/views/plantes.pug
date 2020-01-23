@@ -4,5 +4,9 @@ block title
     title Liste des plantes
 
 block content
-    each plante in plantes
-        li= plante
+    h3 Liste des plantes
+    ul(id='overview')
+        each plante in plantes
+            li
+                a(href='/plantes/' + plante.id) #{plante.nom}
+                span #{plante.emplacement}

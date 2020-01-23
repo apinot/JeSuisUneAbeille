@@ -1,3 +1,22 @@
-video
-  max-width: 90%
-  height: auto
+body
+  margin: 0 0 20px 0
+  font-family: "Aileron", Arial, sans-serif
+  header
+    @import "nav"
+  #content
+    display: flex
+    flex-direction: column
+    h3
+      text-align: center
+    @import "scan"
+    @import "details"
+    @import "overview"
+
+    #blocks-menu
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: space-evenly
+      margin-top: 40%
+      @import "blocks"
+

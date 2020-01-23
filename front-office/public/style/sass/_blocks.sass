@@ -1,0 +1,22 @@
+@mixin block($color)
+  display: block
+  text-decoration: none
+  text-align: center
+  color: $color
+  width: 140px
+  height: 117px
+  border: solid 1px $color
+  border-radius: 8px
+  margin: 8px
+  .icon
+    font-size: 100px
+
+
+#plantes
+  @include block(green)
+#scan
+  @include block(black)
+#classement
+  @include block(orange)
+#connexion
+  @include block(blue)
