@@ -29,6 +29,7 @@
 <table class="table table-sm table-striped">
     <thead>
         <tr>
+            <th scope="col">Photo</th>
             <th scope="col">#ID</th>
             <th scope="col">Nom</th>
             <th scope="col">Nom latin</th>
@@ -45,7 +46,8 @@
     <tbody>
         {% for plante in plantes %}
         <tr>
-            <th scope="row">{{plante.id}}</th>
+            <td><img class="img-thumbnail" src="{{plante.photo}}"></td>
+            <td scope="row">{{plante.id}}</td>
             <td>{{plante.nom}}</td>
             <td>{{plante.nom_latin}}</td>
             <td>{{plante.taille}}</td>
