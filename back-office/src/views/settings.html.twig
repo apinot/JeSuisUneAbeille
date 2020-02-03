@@ -1,0 +1,23 @@
+{% extends "template.html.twig" %}
+
+{% block content %}
+    <div class="row mt-3 d-print-none">
+        <a class="btn btn-primary" href="javascript:history.back()"><i class="fas fa-arrow-left mr-2"></i> Retour</a>
+    </div>
+    <div class="row">
+        <h1 class="col-12 text-capitalize text-center">Settings</h1>
+    </div>
+    <div class="row">
+        <form method="POST" action="{{path_for('updateSettings')}}">
+            <div class="form-group">
+                <label for="temps">Durée d'une partie (en secondes) : </label>
+                <input type="text" class="form-control" name="temps" id="temps" value="{{config.temps}}">
+            </div>
+            <div class="form-group">
+                <label for="nbPlantes">Nombre de plantes par partie :</label>
+                <input type="text" class="form-control" name="nbPlantes" id="nbPlantes" value="{{config.nbPlantes}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Appliquer</button>
+        </form>
+    </div>
+{% endblock %}

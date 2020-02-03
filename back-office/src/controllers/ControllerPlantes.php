@@ -3,13 +3,15 @@ namespace abeille\controllers;
 
 use \abeille\models\Plante;
 use \abeille\utils\Router;
+use \abeille\utils\Config;
 use \abeille\utils\QRCode;
 
 class ControllerPlantes extends Controller {
     
     public function afficherListePlantes($request , $response, $args) {
         $plantes = Plante::all();
-        return $this->render($response, 'index.html.twig', compact("plantes"));
+        $config = Config::all();
+        return $this->render($response, 'index.html.twig', compact("plantes", "config"));
     }
     
     public function afficherPlante($request, $response, $args){

@@ -2,6 +2,7 @@
 require_once('../../vendor/autoload.php');
 
 use \abeille\controllers\ControllerPlantes;
+use \abeille\controllers\ControllerPartie;
 use \abeille\controllers\ControllerRuche;
 
 //database connection with Eloquent
@@ -30,6 +31,9 @@ $app->put('/plante/{id}', ControllerPlantes::class.':modifierPlante')->setName('
 $app->delete('/plante/{id}', ControllerPlantes::class.':supprimerPlante')->setName('supprimerPlante');
 
 $app->get('/ruche', ControllerRuche::class.':afficherRuche')->setName('afficherRuche');
+
+$app->get('/settings', ControllerPartie::class.':afficherFormSettings')->setName('settings');
+$app->post('/settings', ControllerPartie::class.':updateSettings')->setName('updateSettings');
 
 
 //run application

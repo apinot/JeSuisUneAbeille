@@ -5,6 +5,23 @@
     <small class="text-muted">Back-Office</small>
 </h1>
 
+<div>
+    <h3>
+        Paramètres de partie
+    </h3>
+    <div>
+        <ul>
+            <li>Durée de la partie : {{config.temps}} secondes</li>
+            <li>Nombre de plantes par liste : {{config.nbPlantes}}</li>
+        </ul>
+    </div>
+    <div>
+        <a class="btn btn-primary col-1 offset-1" href="{{path_for('settings')}}" role="button"><i class="fas fa-cog"></i></a>
+    </div>
+</div>
+
+<hr>
+
 <div class="d-flex justify-content-start align-items-center">
     <h3 class="mr-3">
         Ruche
