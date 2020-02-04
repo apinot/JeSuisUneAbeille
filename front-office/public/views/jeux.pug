@@ -5,11 +5,6 @@ block title
 block content
     h3(id="titre") Scanner le rucher
     video(id='camera', muted=true)
-    button(id='startGame') début
-    button(id='scan1') 1
-    button(id='scan1') 2
-    button(id='scan1') 3
-    button(id='scan1') 4
     div(id='divPlantes' style='display:none')
       ul(id="listePlantes")
         each plante in plantes
@@ -23,32 +18,14 @@ append scripts
 
         const redirect = (result) => {
             const data = JSON.parse(result);
-
             if(data.type === 'ruche') {
-                window.location.replace('/ruche');
-                return;
-            }
+          	let div = document.getElementById('divPlantes')
+          	div.style.display = "block";
 
-            const id = JSON.parse(result).id
-            window.location.replace('/plante/' + id);
+          	let titre = document.getElementById('titre')
+          	titre.textContent = "Scanner les plantes";
+            }
         }
 
         const qrScanner = new QrScanner(camera, result => {redirect(result)});
         qrScanner.start();
-
-        let start = false;
-
-        $('#startGame').click(function() {
-          start = true;
-          let div = document.getElementById('divPlantes')
-          div.style.display = "block";
-
-          let titre = document.getElementById('titre')
-          titre.textContent = "Scanner les plantes";
-        })
-
-        $("button[id^='scan']").click(function() {
-          if(start) {
-                console.log(this.id)
-          }
-        })
