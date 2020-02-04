@@ -4,6 +4,7 @@
  * *************
  */
 const express = require('express');
+var QRCode = require('qrcode')
 const Plante = require('./public/js/classes/Plante.js');
 
 /**
@@ -25,6 +26,16 @@ app.use(express.static(process.cwd() + '/public'));
 // Accueil
 app.get('/', (req, res) => {
     res.render('index')
+});
+
+app.get('/jouer', (req, res) => {
+   Plante.random(10)
+       .then(plantes => {
+           res.render('jeux', {plantes: plantes})
+       })
+       .catch(error => {
+           res.render('error', error)
+       })
 });
 
 app.get('/plantes', (req, res) => {

@@ -57,6 +57,37 @@ class Plante {
             })
         })
     }
+
+    static random(nb){
+        return new Promise((resolve, reject) => {
+            const sql = "SELECT * FROM plante";
+            db.query(sql, (error, result) => {
+                if (!error){
+                    let indicePlantes = [];
+                    for(let i = 0; i<=9; i++) {
+                      let indice = Math.round(Math.random() * ((result.length-1) - 0) + 0);
+                      let existe = true;
+                      while(existe) {
+                        existe = false;
+                        indice = Math.round(Math.random() * ((result.length-1) - 0) + 0);
+                        indicePlantes.forEach(function(elem) {
+                          if(elem === indice) existe = true;
+                        })
+                      }
+                      indicePlantes.push(indice)
+                    }
+                    let plantes = [];
+                    indicePlantes.forEach(function(indice) {
+                      plantes.push(result[indice])
+                    })
+                    resolve(plantes)
+                }
+                else {
+                    reject(error)
+                }
+            })
+        })
+    }
 }
 
 module.exports = Plante;

@@ -16,5 +16,10 @@ block content
             span(class='value') #{plante.couleur}
         li #[strong Floraison] :
             span(class='value') #{plante.floraison}
+        li(style="display:flex") #[strong Photo] :
+            img(src=plante.photo style="width:50%;margin:auto")
 
     button Récolter #{plante.pollen} pollen(s) et #{plante.nectar} nectar(s)
+append scripts
+    script(type='module').
+        console.log(plante)

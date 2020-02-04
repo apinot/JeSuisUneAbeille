@@ -6,13 +6,14 @@ block title
 block content
     h3 Scanner un QR Code
     video(id='camera', muted=true)
+
 append scripts
     script(type='module').
         import QrScanner from './js/tools/qr-scanner.min.js';
         QrScanner.WORKER_PATH = './js/tools/qr-scanner-worker.min.js';
 
         const camera = document.getElementById('camera');
-        
+
         const redirect = (result) => {
             const data = JSON.parse(result);
 

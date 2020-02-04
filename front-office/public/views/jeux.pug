@@ -1,0 +1,54 @@
+extends base
+
+block title
+    title Jouer
+block content
+    h3(id="titre") Scanner le rucher
+    video(id='camera', muted=true)
+    button(id='startGame') début
+    button(id='scan1') 1
+    button(id='scan1') 2
+    button(id='scan1') 3
+    button(id='scan1') 4
+    div(id='divPlantes' style='display:none')
+      ul(id="listePlantes")
+        each plante in plantes
+          li #{plante.nom}
+append scripts
+    script(type='module').
+        import QrScanner from './js/tools/qr-scanner.min.js';
+        QrScanner.WORKER_PATH = './js/tools/qr-scanner-worker.min.js';
+
+        const camera = document.getElementById('camera');
+
+        const redirect = (result) => {
+            const data = JSON.parse(result);
+
+            if(data.type === 'ruche') {
+                window.location.replace('/ruche');
+                return;
+            }
+
+            const id = JSON.parse(result).id
+            window.location.replace('/plante/' + id);
+        }
+
+        const qrScanner = new QrScanner(camera, result => {redirect(result)});
+        qrScanner.start();
+
+        let start = false;
+
+        $('#startGame').click(function() {
+          start = true;
+          let div = document.getElementById('divPlantes')
+          div.style.display = "block";
+
+          let titre = document.getElementById('titre')
+          titre.textContent = "Scanner les plantes";
+        })
+
+        $("button[id^='scan']").click(function() {
+          if(start) {
+                console.log(this.id)
+          }
+        })
